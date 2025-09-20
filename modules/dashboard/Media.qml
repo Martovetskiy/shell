@@ -37,9 +37,10 @@ Item {
         return `${mins}:${secs}`;
     }
 
-    implicitWidth: cover.implicitWidth + Config.dashboard.sizes.mediaVisualiserSize * 2 + details.implicitWidth + details.anchors.leftMargin + bongocat.implicitWidth + bongocat.anchors.leftMargin * 2 + Appearance.padding.large * 2
-    implicitHeight: Math.max(cover.implicitHeight + Config.dashboard.sizes.mediaVisualiserSize * 2, details.implicitHeight, bongocat.implicitHeight) + Appearance.padding.large * 2
-
+    //implicitWidth: cover.implicitWidth + Config.dashboard.sizes.mediaVisualiserSize * 2 + details.implicitWidth + details.anchors.leftMargin + bongocat.implicitWidth + bongocat.anchors.leftMargin * 2 + Appearance.padding.large * 2
+    //implicitHeight: Math.max(cover.implicitHeight + Config.dashboard.sizes.mediaVisualiserSize * 2, details.implicitHeight, bongocat.implicitHeight) + Appearance.padding.large * 2
+    implicitWidth: cover.implicitWidth + Config.dashboard.sizes.mediaVisualiserSize * 2 + details.implicitWidth + details.anchors.leftMargin * 2 + Appearance.padding.large * 2
+    implicitHeight: Math.max(cover.implicitHeight + Config.dashboard.sizes.mediaVisualiserSize * 2, details.implicitHeight) + Appearance.padding.large * 2
     Behavior on playerProgress {
         Anim {
             duration: Appearance.anim.durations.large
@@ -512,7 +513,7 @@ Item {
         }
     }
 
-    Item {
+    /*Item {
         id: bongocat
 
         anchors.verticalCenter: parent.verticalCenter
@@ -534,7 +535,7 @@ Item {
             asynchronous: true
             fillMode: AnimatedImage.PreserveAspectFit
         }
-    }
+    }*/
 
     component PlayerIcon: Loader {
         id: loader
